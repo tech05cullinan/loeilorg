@@ -5,13 +5,13 @@ const getWhatsAppMessage = (): string => {
   const hour = new Date().getHours();
 
   if (hour >= 5 && hour < 12) {
-    return "Bonjour L'Oeil org ! 👋 Je vous contacte ce matin afin d'avoir plus d'informations sur vos services.";
+    return "Bonjour L'Oeil org ! Je vous contacte ce matin afin d'avoir plus d'informations sur vos services.";
   } else if (hour >= 12 && hour < 18) {
-    return "Bonjour L'Oeil org ! 👋 J'espère que vous passez une bonne journée. Je vous contacte cet après-midi afin d'avoir plus d'informations sur vos services.";
+    return "Bonjour L'Oeil org ! J'espère que vous passez une bonne journée. Je vous contacte cet après-midi afin d'avoir plus d'informations sur vos services.";
   } else if (hour >= 18 && hour < 22) {
-    return "Bonsoir L'Oeil org ! 👋 Je vous contacte ce soir afin d'avoir plus d'informations sur vos services.";
+    return "Bonsoir L'Oeil org ! Je vous contacte ce soir afin d'avoir plus d'informations sur vos services.";
   } else {
-    return "Bonsoir L'Oeil org ! 👋 Je vous contacte afin d'avoir plus d'informations sur vos services.";
+    return "Bonsoir L'Oeil org ! Je vous contacte afin d'avoir plus d'informations sur vos services.";
   }
 };
 
