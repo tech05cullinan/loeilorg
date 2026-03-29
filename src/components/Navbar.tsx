@@ -82,7 +82,7 @@ export const Navbar = () => {
             <motion.img 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              src="/images/logo.png" // local image
+              src="/images/logo/logo-transparent.png " // local image
               alt="L'oeil ORG Logo"
               // Option 2 — recadre l'image vers la droite
               className="h-12 md:h-14 w-24 md:w-32 object-cover object-right transition-all duration-300"

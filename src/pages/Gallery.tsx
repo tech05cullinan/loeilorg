@@ -20,14 +20,14 @@ export default function Gallery() {
 
   const galleryItems: { id: number, category: string, url: string, type: 'image' | 'video' }[] = [
     { id: 1, category: "wedding", url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800", type: 'image' },
-    { id: 2, category: "events", url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800", type: 'image' },
-    { id: 3, category: "video", url: "https://player.vimeo.com/external/494252666.sd.mp4?s=721c8653c004d0033233e72389450c3817f6208d&profile_id=165&oauth2_token_id=57447761", type: 'video' },
-    { id: 5, category: "beauty", url: "/public/images/africaine.jpeg", type: 'image' },
+    { id: 2, category: "video", url: "https://player.vimeo.com/external/494252666.sd.mp4?s=721c8653c004d0033233e72389450c3817f6208d&profile_id=165&oauth2_token_id=57447761", type: 'video' },
+    { id: 3, category: "events", url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800", type: 'image' },
+    { id: 5, category: "beauty", url: "/images/africaine.jpeg", type: 'image' },
     { id: 6, category: "video", url: "https://player.vimeo.com/external/459389137.sd.mp4?s=9123930460e204116951a613dbcc3729581ce072&profile_id=165&oauth2_token_id=57447761", type: 'video' },
     { id: 7, category: "wedding", url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800", type: 'image' },
     { id: 8, category: "events", url: "https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=800", type: 'image' },
     { id: 9, category: "video", url: "https://player.vimeo.com/external/371433846.sd.mp4?s=231da6ab3a7b4702997447ad313e7f19d996107b&profile_id=139&oauth2_token_id=57447761", type: 'video' },
-    { id: 10, category: "events", url: "/public/images/ev1.jpeg", type: 'image' },
+    { id: 10, category: "events", url: "/images/ev1.jpeg", type: 'image' },
   ];
 
   const filteredItems = activeCategory === "all" 
@@ -76,7 +76,7 @@ export default function Gallery() {
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeCategory === cat.id 
                   ? "bg-gold text-white shadow-lg" 
-                  : "bg-white text-ink/60 hover:bg-beige border border-beige"
+                  : "bg-white text-ink/60 hover:bg-beige border border-beige dark:bg-white dark:text-black dark:hover:bg-beige dark:hover:text-amber-600 dark:border-beige"
               }`}
             >
               {cat.label}

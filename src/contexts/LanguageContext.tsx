@@ -72,6 +72,7 @@ const translations = {
     'gallery.events': 'Événements',
     'gallery.view': 'Voir',
     'gallery.videos': 'Vidéos',
+  
     
     // Testimonials
     'testimonials.subtitle': 'Témoignages',
