@@ -6,78 +6,127 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-footer-bg text-footer-text pt-20 pb-10 transition-colors duration-300">
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <div className="space-y-6">
-          <Link to="/" className="flex items-center group" aria-label="L'oeil ORG - Home">
-            <img 
-              src="/images/logo.png"
-              alt="L'oeil ORG Logo"
-              className="h-12 w-auto object-contain"
-            />
-          </Link>
-          <p className="text-footer-text/60 text-sm leading-relaxed">
-            {t('footer.tagline')}
-          </p>
-          <div className="flex items-center space-x-4">
-            <a href="#" className="w-10 h-10 rounded-full border border-footer-text/10 flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300" aria-label="Follow us on Instagram">
-              <Instagram size={18} />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-footer-text/10 flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300" aria-label="Follow us on Facebook">
-              <Facebook size={18} />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-footer-text/10 flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300" aria-label="Follow us on Twitter">
-              <Twitter size={18} />
-            </a>
+    <footer className="bg-footer-bg text-footer-text pt-16 pb-8 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+
+          <div className="space-y-5">
+            <Link to="/" className="flex items-center" aria-label="L'oeil ORG - Home">
+              <img 
+                src="/images/logo.png"
+                alt="L'oeil ORG Logo"
+                className="h-24 w-auto object-contain border-5 rounded-full"
+              />
+            </Link>
+
+            <p className="text-sm leading-relaxed text-footer-text/70 max-w-xs">
+              {t('footer.tagline')}
+            </p>
+
+            <div className="flex gap-3 pt-2">
+              {[Instagram, Facebook, Twitter].map((Icon, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-footer-text/20 hover:bg-gold hover:border-gold hover:scale-105 transition-all duration-300"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold tracking-wide mb-5">
+              {t('footer.quickLinks')}
+            </h4>
+
+            <ul className="space-y-3 text-sm leading-relaxed text-footer-text/70">
+              {[
+                { to: '/', label: t('nav.home') },
+                { to: '/about', label: t('nav.about') },
+                { to: '/services', label: t('nav.services') },
+                { to: '/gallery', label: t('nav.gallery') },
+                { to: '/contact', label: t('nav.contact') }
+              ].map((item, i) => (
+                <li key={i}>
+                  <Link
+                    to={item.to}
+                    className="hover:text-gold transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold tracking-wide mb-5">
+              {t('nav.services')}
+            </h4>
+
+            <ul className="space-y-3 text-sm leading-relaxed text-footer-text/70">
+              {[
+                t('services.wedding'),
+                t('services.beauty'),
+                t('services.catering'),
+                t('about.feature1'),
+                t('about.feature2'),
+                t('about.feature3')
+              ].map((service, i) => (
+                <li
+                  key={i}
+                  className="hover:text-gold transition-colors duration-300 cursor-default"
+                >
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold tracking-wide mb-5">
+              {t('nav.contact')}
+            </h4>
+
+            <ul className="space-y-4 text-sm leading-relaxed text-footer-text/70">
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="text-brand-orange mt-1" />
+                <span>Cotonou, Bénin</span>
+              </li>
+
+              <li className="flex items-center gap-3">
+                <Phone size={18} className="text-brand-orange" />
+                <span>+229 01 46 56 43 01</span>
+              </li>
+
+              <li className="flex items-center gap-3">
+                <Mail size={18} className="text-brand-orange" />
+                <span>loeilorg@gmail.com</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div>
-          <h4 className="text-lg font-serif font-medium mb-6">{t('footer.quickLinks')}</h4>
-          <ul className="space-y-4 text-sm text-footer-text/60">
-            <li><Link to="/" className="hover:text-gold transition-colors">{t('nav.home')}</Link></li>
-            <li><Link to="/about" className="hover:text-gold transition-colors">{t('nav.about')}</Link></li>
-            <li><Link to="/services" className="hover:text-gold transition-colors">{t('nav.services')}</Link></li>
-            <li><Link to="/gallery" className="hover:text-gold transition-colors">{t('nav.gallery')}</Link></li>
-            <li><Link to="/contact" className="hover:text-gold transition-colors">{t('nav.contact')}</Link></li>
-          </ul>
-        </div>
+        <div className="mt-16 border-t border-footer-text/10 pt-6">
 
-        <div>
-          <h4 className="text-lg font-serif font-medium mb-6">{t('nav.services')}</h4>
-          <ul className="space-y-4 text-sm text-footer-text/60">
-            <li>{t('services.wedding')}</li>
-            <li>{t('services.beauty')}</li>
-            <li>{t('services.catering')}</li>
-            <li>{t('about.feature1')}</li>
-            <li>{t('about.feature2')}</li>
-            <li>{t('about.feature3')}</li>
-          </ul>
-        </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-footer-text/50 uppercase tracking-wider">
 
-        <div>
-          <h4 className="text-lg font-serif font-medium mb-6">{t('nav.contact')}</h4>
-          <ul className="space-y-4 text-sm text-footer-text/60">
-            <li className="flex items-start space-x-3">
-              <MapPin size={18} className="text-brand-orange shrink-0" />
-              <span>Cotonou, Bénin</span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <Phone size={18} className="text-brand-orange shrink-0" />
-              <span>+229 01 46 56 43 01</span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <Mail size={18} className="text-brand-orange shrink-0" />
-              <span>loeilorg@gmail.com</span>
-            </li>
-          </ul>
+            <p className="text-center md:text-left">
+              © {new Date().getFullYear()} L’œil ORG. {t('footer.rights')}
+            </p>
+
+            <p className="opacity-60 text-center">
+              RCCM : RB/COT/20 A 56910 N | IFU : 202011399913
+            </p>
+
+            <p className="opacity-40 text-center md:text-right">
+              TechCullinan
+            </p>
+          </div>
         </div>
-      </div>
-      
-      <div className="container mx-auto px-6 mt-20 pt-8 border-t border-footer-text/10 text-center text-footer-text/40 text-[10px] uppercase tracking-widest space-y-2">
-        <p>© {new Date().getFullYear()} L’œil ORG. {t('footer.rights')}</p>
-        <p className="opacity-50">RCCM : RB/COT/20 A 56910 N | IFU : 202011399913</p>
-        <p>TechCullinan</p>
       </div>
     </footer>
   );
