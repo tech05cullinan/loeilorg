@@ -1,5 +1,5 @@
-import { MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
+import { FaWhatsapp } from "react-icons/fa";
 
 const getWhatsAppMessage = (): string => {
   const hour = new Date().getHours();
@@ -20,22 +20,43 @@ export const FloatingWhatsApp = () => {
   const whatsappUrl = `https://wa.me/22946564301?text=${message}`;
 
   return (
-    <motion.a
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Contact us on WhatsApp"
-      className="fixed bottom-24 right-8 md:bottom-8 md:right-8 z-[9999999] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl cursor-pointer pointer-events-auto"
+    <motion.div
+      initial={{ opacity: 0, y: 80 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-[9999999]"
     >
-      <MessageCircle size={32} />
-      <span className="absolute -top-2 -right-2 flex h-4 w-4">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
-      </span>
-    </motion.a>
+      <motion.a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp"
+        className="group relative flex items-center"
+        whileTap={{ scale: 0.92 }}
+      >
+        {/* Show whatsapp text */}
+        <motion.span
+          initial={{ opacity: 0, x: 20 }}
+          whileHover={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+          className="absolute right-16 bg-white text-black text-sm px-4 py-2 rounded-full shadow-lg whitespace-nowrap opacity-0"
+        >
+          WhatsApp
+        </motion.span>
+
+        {/* bouton circulaire */}
+        <motion.div
+          className="relative w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl cursor-pointer overflow-visible"
+          whileHover={{ scale: 1.15 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          {/* Logo whatsapp */}
+          <FaWhatsapp size={32} />
+
+          {/* Animation */}
+          <span className="absolute inset-0 rounded-full bg-white opacity-20 animate-ping"></span>
+        </motion.div>
+      </motion.a>
+    </motion.div>
   );
 };
