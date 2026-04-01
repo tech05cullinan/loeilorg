@@ -343,7 +343,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 5, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="bg-ink dark:bg-ink rounded-[3rem] p-12 md:p-20 text-center text-white dark:text-black relative overflow-hidden"
           >

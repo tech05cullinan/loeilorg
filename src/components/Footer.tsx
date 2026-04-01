@@ -25,10 +25,13 @@ export const Footer = () => {
             </p>
 
             <div className="flex gap-3 pt-2">
-              {[Instagram, Facebook, Twitter].map((Icon, index) => (
+              {[
+                { href: 'https://www.instagram.com/loeilorg/', Icon: Instagram },
+                { href: 'https://www.facebook.com/loeilorg', Icon: Facebook },
+              ].map(({Icon, href}, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
                   className="w-9 h-9 flex items-center justify-center rounded-full border border-footer-text/20 hover:bg-gold hover:border-gold hover:scale-105 transition-all duration-300"
                 >
                   <Icon size={16} />
