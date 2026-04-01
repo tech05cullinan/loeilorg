@@ -339,25 +339,25 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-24">
+      <section className="py-24 bg-card">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 5, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-ink rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden"
+            className="bg-ink dark:bg-ink rounded-[3rem] p-12 md:p-20 text-center text-white dark:text-black relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
             <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-              <h2 className="text-4xl md:text-6xl font-serif">{t('cta.title')}</h2>
-              <p className="text-white/60 text-lg">{t('cta.text')}</p>
+              <h2 className="text-4xl md:text-6xl font-serif text-white dark:text-black">{t('cta.title')}</h2>
+              <p className="text-white/60 dark:text-black/60 text-lg">{t('cta.text')}</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/contact">
                   <Button size="lg" className="w-full sm:w-auto">{t('hero.cta.quote')}</Button>
                 </Link>
                 <Link to="/services">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 text-white hover:bg-white hover:text-ink">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 text-white dark:text-black hover:bg-black/5 hover:text-ink dark:hover:text-black">
                     {t('cta.services')}
                   </Button>
                 </Link>
