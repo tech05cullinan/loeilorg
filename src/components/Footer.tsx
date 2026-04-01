@@ -121,13 +121,10 @@ export const Footer = () => {
               © {new Date().getFullYear()} L’œil ORG. {t('footer.rights')}
             </p>
 
-            <p className="opacity-60 text-center">
+            <p className="text-center md:text-right">
               RCCM : RB/COT/20 A 56910 N | IFU : 202011399913
             </p>
 
-            <p className="opacity-40 text-center md:text-right">
-              TechCullinan
-            </p>
           </div>
         </div>
       </div>
